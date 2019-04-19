@@ -40,14 +40,27 @@ const employees = [
 
 // This is not a race. Everyone on your team should understand what is happening.
 // Ask questions when you don't.
-
+let newObjects = [];
 
 function bonusCalculator(employeeArray){
   for(let i = 0 ; i < employeeArray.length; i++) {
     let individualEmployee = employeeArray[i];
     console.log(percentage(individualEmployee));
+    newObjects.push(percentage(individualEmployee));
   }
+  console.log(newObjects);
 }
+
+$(document).ready(function(){
+  for(let i = 0 ; i < newObjects.lenght; i++){
+      console.log(newObjectsArray);
+      $('.contain').append('<div></div>');
+      let liveDiv = $('.contain').children().last();
+      liveDiv.append('<p>' + newObjects[i].name +'</p>');
+      
+  }
+
+});
 
 
 //---------------------------------------\\
@@ -80,7 +93,7 @@ function percentage(employee){
       tenureBonus = 0;
       break;
   }
-
+//======================
   let totalBonusPercentage = bonusPercentage + tenureBonus;
 
   employee.annualSalary = parseInt(employee.annualSalary);
@@ -96,7 +109,7 @@ function percentage(employee){
   if (totalBonusPercentage > 0.13) {
     totalBonusPercentage = 0.13;
   }
-
+//====================
   let bonusCash = employee.annualSalary * totalBonusPercentage;
   employee.annualSalary = employee.annualSalary + bonusCash;
 
