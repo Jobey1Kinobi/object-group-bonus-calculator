@@ -56,11 +56,9 @@ $(document).ready(function(){
       console.log(newObjectsArray);
       $('.contain').append('<div></div>');
       let liveDiv = $('.contain').children().last();
-      liveDiv.append('<p>' + newObjects[i].name +'</p>');
-      
-  }
-
-});
+      liveDiv.append('<p>' + newObjects.name +'</p>');
+      liveDiv.append('<p>' + newObjects.annualSalary + '</p>');
+      }
 
 
 //---------------------------------------\\
